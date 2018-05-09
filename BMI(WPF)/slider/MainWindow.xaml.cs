@@ -34,6 +34,20 @@ namespace slider
             // position
             double v = (value / 200) * 320;// 0~1
             Canvas.SetLeft(Height, v);
+
+            //BMI
+            double h = double.Parse(HeightNumber.Text);
+            double w = double.Parse(WeightNumber.Text);
+            double bmi = Math.Round(w / Math.Pow((h / 100), 2), 1);
+
+            //Split
+            string[] parts = bmi.ToString().Split('.');
+
+            BmiNumber1.Text = parts[0];
+            if (parts.Length > 1)
+                BmiNumber2.Text = "." + parts[1];
+            else
+                BmiNumber2.Text = ".0";
         }
 
         private void WeightSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -43,22 +57,22 @@ namespace slider
             WeightNumber.Text = value.ToString();
 
             // position
-            double u = (value / 200) * 320;// 0~1
-            Canvas.SetLeft(Weight, u);
+            double v = (value / 200) * 320;// 0~1
+            Canvas.SetLeft(Weight, v);
             
             //BMI
             double h = double.Parse(HeightNumber.Text);
             double w = double.Parse(WeightNumber.Text);
-            double bmi = w / Math.Pow((h / 100), 2);
+            double bmi = Math.Round( w / Math.Pow((h / 100), 2), 1);
 
             //Split
-            string[] parts = Math.Round(bmi, 1).ToString().Split('.');
+            string[] parts = bmi.ToString().Split('.');
 
             BmiNumber1.Text = parts[0];
             if (parts.Length > 1)
                 BmiNumber2.Text = "." + parts[1];
             else
-                BmiNumber2.Text = "0";
+                BmiNumber2.Text = ".0";
         }
         
     }

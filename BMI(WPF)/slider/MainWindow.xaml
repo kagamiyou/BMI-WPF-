@@ -5,43 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:slider"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,-0.4,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="211*"/>
-            <RowDefinition Height="209*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Margin="190,10,204,30" Width="400" RenderTransformOrigin="0.507,0.639" Grid.RowSpan="2">
+        Title="MainWindow" Height="350" Width="535
+        ">
+    <Grid>
+        <StackPanel Margin="20" Width="400">
             <!-- Height-->
-            <Canvas Height="50" Background="LightBlue">
+            <Canvas Width="400" Height="50" Background="LightBlue">
                 <Border CornerRadius="10" Background="Orange" x:Name="Height">
-                    <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="HeightNumber" Width="80" TextAlignment="Center" Padding="0 5 "><Run Text="100"/></TextBlock>
+                    <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="HeightNumber" Width="80" TextAlignment="Center" Padding="0 5 ">0</TextBlock>
                 </Border>
             </Canvas>
-            <Slider Minimum="0" Maximum="200" x:Name="HeightSlider" ValueChanged="HeightSlider_ValueChanged"/>
+            <Slider Minimum="0" Maximum="200" x:Name="HeightSlider" ValueChanged="HeightSlider_ValueChanged">
+            </Slider>
 
             <!-- Weight-->
             <Canvas Width="400" Height="50" Background="LightBlue">
                 <Border CornerRadius="10" Background="Orange" x:Name="Weight">
-                    <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="WeightNumber" Width="80" TextAlignment="Center" Padding="0 5 "><Run Text="100"/></TextBlock>
+                    <TextBlock Canvas.Top="0" Canvas.Left="0" x:Name="WeightNumber" Width="80" TextAlignment="Center" Padding="0 5 ">0</TextBlock>
                 </Border>
             </Canvas>
-            <Slider Minimum="0" Maximum="200" x:Name="WeightSlider" ValueChanged="WeightSlider_ValueChanged"/>
+            <Slider Minimum="0" Maximum="200" x:Name="WeightSlider" ValueChanged="WeightSlider_ValueChanged">
+            </Slider>
 
             <!--BMI-->
-            <StackPanel Orientation="Horizontal" Margin="164,0,165,0" RenderTransformOrigin="2.079,0.486" Height="224">
-                <TextBlock FontSize="40" x:Name="BmiNumber1" RenderTransformOrigin="0.561,1.1" Height="50">
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleY="1.496"/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="0.68"/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform>29</TextBlock>
-                <TextBlock FontSize="20" Margin="0,108,0,0" x:Name="BmiNumber2" Height="116" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.728" Width="24">.5</TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="171,0,54,0" Height="46">
+                <TextBlock FontSize="40" x:Name="BmiNumber1">00</TextBlock>
+                <TextBlock FontSize="20" Margin="0,7,0,0" x:Name="BmiNumber2" >0</TextBlock>
             </StackPanel>
         </StackPanel>
+
 
     </Grid>
 </Window>
